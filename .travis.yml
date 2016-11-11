@@ -1,1 +1,8 @@
 script: mvn clean verify
+
+deploy:
+  provider: gae
+  project: testprojetmovie
+  keyfile: gce.json
+  verbosity: debug
+  on: master
