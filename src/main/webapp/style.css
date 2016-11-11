@@ -1,0 +1,20 @@
+.right,.left{
+    display:inline-block;
+}
+.right{
+    margin-top: -8px;
+    padding: 35PX;
+    position: absolute;
+}
+.left{
+    width: 20%;
+    background-color: #4a748c;
+    margin-top: -8px;
+    margin-left: -8px;
+    padding: 10px;
+}
+
+body{
+    color: #181f27;
+    font-family: cursive;
+}
