@@ -23,6 +23,9 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>Sullivan PINEAU</title>
+  <link href="style.css" rel="stylesheet" />
+  <meta name="description" content="Acueil du site de Sullivan">
+  <meta name="keywords" content="HTML,CSS,JavaScript,Angular,GoogleAppEngine">
   <meta name="author" content="Sullivan PINEAU">
 </head>
 
