@@ -1,14 +1,2 @@
 
-sudo: required
-
-services:  
-  - docker
-
 language: java
-
-deploy:  
-  provider: gae
-  project: testprojetmovie
-  keyfile: service-account.json
-  verbosity: debug
-  on: master
