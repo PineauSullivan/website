@@ -1,4 +1,14 @@
-deploy:
+
+sudo: required
+
+services:  
+  - docker
+
+language: go
+
+deploy:  
   provider: gae
-  keyfile: testprojetmovie-301a854bee2e.json
   project: testprojetmovie
+  keyfile: service-account.json
+  verbosity: debug
+  on: master
