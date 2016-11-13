@@ -1,0 +1,26 @@
+#rightadmin input[type="submit"] {
+    padding: 10px;
+    display: inline-block;
+    background-color: #4a748c;
+    color: white;
+    cursor: pointer;
+    border: solid white 1px;
+}
+#rightadmin form {
+    display: inline-block;
+}
+
+#rightadmin input[type="submit"]:hover{
+    background-color: white;
+    color: #4a748c;
+    border: solid #4a748c 1px;
+}
+
+.boutonsadd {
+    display: inline-block;
+    width: 100%;
+}
+
+#rightadmin{
+    text-align: center;
+}

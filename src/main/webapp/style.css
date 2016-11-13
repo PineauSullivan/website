@@ -8,6 +8,7 @@
     margin-left:22%;
     background-color:white;
     width: 71%;
+    min-height: 100%;
 }
 .left{
     width: 20%;
@@ -73,4 +74,30 @@ body{
 
 .date_article {
     width: 20%;
+}
+
+.caseresult {
+    display: inline-block;
+    width: 20%;
+}
+
+.resulttab{
+    padding-top: 5px;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid;
+}
+
+a {
+    text-decoration: none !important;
+    color: coral;
+}
+
+a:hover{
+    font-size: 110%;
+}
+
+.wait{
+    text-align: center;
 }
