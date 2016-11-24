@@ -42,7 +42,7 @@
   <div id="prenom_nom">Sullivan PINEAU</div>
   <div id="information">
     <p>22 ans</p>
-    <p>&Eacute;tudiant</p>
+    <p>&Eacute;tudiant en Master 1 ALMA</p>
     <p>Mobile g&eacute;ographiquement, Permis B</p>
     <p>115 boulevard Michelet 44300 Nantes</p>
     <p>1 impasse du parc 79290 Brion-pr&egrave;s-thouet</p>

@@ -24,7 +24,7 @@ limitations under the License.
   <artifactId>website</artifactId>
 
   <properties>
-    <app.id>testprojetmovie</app.id>
+    <app.id>sullivanpineauapp</app.id>
     <app.version>1</app.version>
     <appengine.version>1.9.44</appengine.version>
     <gcloud.plugin.version>133</gcloud.plugin.version>
