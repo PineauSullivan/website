@@ -10,18 +10,28 @@
             $scope.centresinteret ="";
             $scope.competences ="";
             $scope.descriptions ="";
+            $scope.infos = "";
 
             $scope.experienceswait= true;
             $scope.formationswait = true;
             $scope.centresinteretwait = true;
             $scope.competenceswait = true;
             $scope.descriptionswait = true;
+            $scope.infoswait= true;
 
             $scope.experiencesok= false;
             $scope.formationsok = false;
             $scope.centresinteretok = false;
             $scope.competencesok = false;
             $scope.descriptionsok = false;
+            $scope.infosok= false;
+
+            var promiseinfos = $http.get('/admin/donnees?type=infos');
+            promiseinfos.success(function(data) {
+                $scope.infos = data;
+                $scope.infoswait= false;
+                $scope.infosok= true;
+            });
 
             var promiseexperiences = $http.get('/admin/donnees?type=experiences');
             promiseexperiences.success(function(data) {

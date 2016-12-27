@@ -35,7 +35,19 @@ body{
 .article div{
     display:inline-block;
     padding-right:10px;
+    width: 40%;
 }
+
+.article_secondaire{
+    border-top:solid 1px;
+    border-color: #d9c8aa;
+}
+
+.article_secondaire div{
+    display:inline-block;
+    padding-right:10px;
+}
+
 .theme{
     border-bottom:solid 2px;
     border-color:#2c3640;
@@ -73,12 +85,12 @@ body{
 }
 
 .date_article {
-    width: 20%;
+    width: auto !important;
 }
 
 .caseresult {
     display: inline-block;
-    width: 20%;
+    width: 19%;
 }
 
 .resulttab{

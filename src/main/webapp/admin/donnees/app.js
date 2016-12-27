@@ -11,6 +11,7 @@
             $scope.lieu="";
             $scope.type="";
             $scope.result = "hummm";
+            $scope.number = 0;
 
             $scope.nbparam=0;
             $scope.showunparam=false;
@@ -51,6 +52,7 @@
                     url: '/admin/donnees?type=' + $scope.type +
                     '&date=' + $scope.date+
                     '&description=' + $scope.description+
+                    '&number=' + $scope.number+
                     '&lieu=' + $scope.lieu ,
                     method: "POST"
                 }).then(function(response) {
@@ -58,6 +60,7 @@
                         $scope.date="";
                         $scope.description="";
                         $scope.lieu="";
+                        $scope.number=0;
                         $scope.divaddresult=true;
                         $scope.divaddresultwait=false;
                         $scope.showunparam=false;
@@ -75,13 +78,15 @@
                 $scope.divaddresultwait=true;
                 $http({
                     url: '/admin/donnees?type=' + $scope.type +
-                    '&description=' + $scope.description,
+                    '&description=' + $scope.description+
+                    '&number=' + $scope.number,
                     method: "POST"
                 }).then(function(response) {
                         $scope.type="";
                         $scope.date="";
                         $scope.description="";
                         $scope.lieu="";
+                        $scope.number=0;
                         $scope.divaddresult=true;
                         $scope.divaddresultwait=false;
                         $scope.showunparam=false;
@@ -156,6 +161,20 @@
                     $scope.showresult=true;
                 });
             };
+
+            $scope.getInfos = function(){
+                $scope.resultwait=true;
+                $scope.showresultunparam=false;
+                $scope.showresulttroisparam=false;
+                var promise = $http.get('/admin/donnees?type=infos');
+                promise.success(function(data) {
+                    $scope.result = data;
+                    $scope.showresultunparam=true;
+                    $scope.resultwait=false;
+                    $scope.showresult=true;
+                });
+            };
+
             $scope.clean = function(){
                 $scope.showresult=false;
                 $scope.resultwait=false;

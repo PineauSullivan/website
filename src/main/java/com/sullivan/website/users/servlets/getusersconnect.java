@@ -28,7 +28,7 @@ public class getusersconnect extends HttpServlet {
         boolean admin = false;
         if (userService.getCurrentUser() != null){
             idUser = userService.getCurrentUser().getUserId();
-            admin=(datastore.isadmin(idUser));
+            admin=(userService.isUserAdmin());
             if(admin){
                 JSONArray listdonneesjson = new JSONArray();
                 List<user> objects = datastore.getusers();

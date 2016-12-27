@@ -41,12 +41,12 @@
   <div id="photomoi"><img src="moi.png" ALT="Ma photo"> </div>
   <div id="prenom_nom">Sullivan PINEAU</div>
   <div id="information">
-    <p>22 ans</p>
-    <p>&Eacute;tudiant en Master 1 ALMA</p>
-    <p>Mobile g&eacute;ographiquement, Permis B</p>
-    <p>115 boulevard Michelet 44300 Nantes</p>
-    <p>1 impasse du parc 79290 Brion-pr&egrave;s-thouet</p>
-    <p>pineau.sullivan@gmail.com</p>
+      <div class="wait" ng-show="infoswait">
+          <img class="loader" src="ajax-loader.svg" alt="loader" height="80" width="80">
+      </div>
+     <div class="info" ng-repeat="info in infos">
+        <p>{{info.description}}</p>
+     </div>
   </div>
   <div id="listlink">
     <a href="https://github.com/PineauSullivan"><img src="github.png" ALT="Logo github"></a>
@@ -70,7 +70,7 @@
             <h1>Formations</h1>
         </div>
         <div class="wait" ng-show="formationswait">
-            <img class="loader" src="ajax-loader.gif" alt="loader" height="80" width="80">
+            <img class="loader" src="ajax-loader.svg" alt="loader" height="80" width="80">
         </div>
         <div ng-show="formationsok">
             <div class="article" ng-repeat="formation in formations">
@@ -91,7 +91,7 @@
             <h1>Exp&eacute;riences</h1>
         </div>
         <div class="wait" ng-show="experienceswait">
-            <img class="loader" src="ajax-loader.gif" alt="loader" height="80" width="80">
+            <img class="loader" src="ajax-loader.svg" alt="loader" height="80" width="80">
         </div>
         <div ng-show="experiencesok">
             <div class="article" ng-repeat="experience in experiences">
@@ -112,10 +112,10 @@
             <h1>Compétences</h1>
         </div>
         <div class="wait" ng-show="competenceswait">
-            <img class="loader" src="ajax-loader.gif" alt="loader" height="80" width="80">
+            <img class="loader" src="ajax-loader.svg" alt="loader" height="80" width="80">
         </div>
         <div ng-show="competencesok">
-            <div class="article" ng-repeat="competence in competences">
+            <div class="article_secondaire" ng-repeat="competence in competences">
                 <div class="description_article">
                     <p>{{competence.description}}</p>
                 </div>
@@ -127,10 +127,10 @@
             <h1>Centres d'int&eacute;r&ecirc;t</h1>
         </div>
         <div class="wait" ng-show="centresinteretwait">
-            <img class="loader" src="ajax-loader.gif" alt="loader" height="80" width="80">
+            <img class="loader" src="ajax-loader.svg" alt="loader" height="80" width="80">
         </div>
         <div ng-show="centresinteretok">
-            <div class="article" ng-repeat="centreinteret in centresinteret">
+            <div class="article_secondaire" ng-repeat="centreinteret in centresinteret">
                 <div class="description_article">
                     <p>{{centreinteret.description}}</p>
                 </div>
@@ -142,10 +142,10 @@
             <h1>Description</h1>
         </div>
         <div class="wait" ng-show="descriptionswait">
-            <img class="loader" src="ajax-loader.gif" alt="loader" height="80" width="80">
+            <img class="loader" src="ajax-loader.svg" alt="loader" height="80" width="80">
         </div>
         <div ng-show="descriptionsok">
-            <div class="article" ng-repeat="description in descriptions">
+            <div class="article_secondaire" ng-repeat="description in descriptions">
                 <div class="description_article">
                     <p>{{description.description}}</p>
                 </div>

@@ -26,7 +26,7 @@ public class GetUsersServlet extends HttpServlet {
             nomUser = userService.getCurrentUser().getNickname();
             idUser = userService.getCurrentUser().getUserId();
             String mail = userService.getCurrentUser().getEmail();
-            admin=(datastore.isadmin(idUser));
+            admin=(userService.isUserAdmin());
             if(!admin)
                 datastore.adddatausers(idUser,nomUser,mail);
         }

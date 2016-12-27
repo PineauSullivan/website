@@ -16,13 +16,22 @@ public abstract class donnees {
     private String description;
     private String lieu;
     private String type;
+    private int number;
 
-
-    public donnees(String date, String description, String lieu, String id) {
+    public donnees(String date, String description, String lieu, String id, int number) {
         this.date = date;
         this.description = description;
         this.lieu = lieu;
         this.id = id;
+        this.number=number;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
     }
 
     public String getDate() {
@@ -67,6 +76,7 @@ public abstract class donnees {
         map.put("date",this.date);
         map.put("description",this.description);
         map.put("lieu",this.lieu);
+        map.put("number",this.number);
         return map;
     }
 }

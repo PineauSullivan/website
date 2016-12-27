@@ -56,6 +56,9 @@
                     <label>Le lieu : <input type="text" ng-model="lieu" /></label>
                 </p>
                 <p>
+                    <label>Number : <input type="number" ng-model="number" /></label>
+                </p>
+                <p>
                 <label><input type="radio" name="type" ng-model="type" value="experience">experience</label><br>
                 <label><input type="radio" name="type" ng-model="type" value="formation">formation</label><br>
                 </p>
@@ -70,9 +73,13 @@
                     <label>La description : <textarea ng-model="description" style="width: 200px; height: 100px;"></textarea></label>
                 </p>
                 <p>
+                    <label>Number : <input type="number" ng-model="number" /></label>
+                </p>
+                <p>
                     <label><input type="radio" name="type" ng-model="type" value="centreinteret">Centre d'interet</label><br>
                     <label><input type="radio" name="type" ng-model="type" value="competence">Competence</label><br>
                     <label><input type="radio" name="type" ng-model="type" value="description">Description</label><br>
+                    <label><input type="radio" name="type" ng-model="type" value="info">Info</label><br>
                 </p>
 
                 <p>
@@ -104,6 +111,9 @@
             <form  ng-submit="getDescriptions()">
                 <input type="submit" value="Descriptions" />
             </form>
+            <form  ng-submit="getInfos()">
+                <input type="submit" value="Info" />
+            </form>
 
             <p ng-show="resultwait">Recherche en cours... ...</p>
 
@@ -114,6 +124,7 @@
                         <div class="caseresult">Date</div>
                         <div class="caseresult">Description</div>
                         <div class="caseresult">Lieu</div>
+                        <div class="caseresult">Number</div>
                     </div>
                     <br>
                     <div class="resulttab" ng-repeat="objet in result">
@@ -121,17 +132,20 @@
                         <div class="caseresult">{{objet.date}}</div>
                         <div class="caseresult">{{objet.description}}</div>
                         <div class="caseresult">{{objet.lieu}}</div>
+                        <div class="caseresult">{{objet.number}}</div>
                     </div>
                 </div>
                 <div ng-show="showresultunparam">
                     <div class="resulttab">
                         <div class="caseresult">Id</div>
                         <div class="caseresult">Contenu</div>
+                        <div class="caseresult">Number</div>
                     </div>
                     <br>
                     <div class="resulttab" ng-repeat="objet in result">
                         <div class="caseresult">{{objet.id}}</div>
                         <div class="caseresult">{{objet.description}}</div>
+                        <div class="caseresult">{{objet.number}}</div>
                     </div>
                 </div>
             </div>

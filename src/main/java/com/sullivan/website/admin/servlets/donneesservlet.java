@@ -37,7 +37,6 @@ public class donneesservlet extends HttpServlet {
   public void doGet(HttpServletRequest req, HttpServletResponse resp)
           throws IOException {
     try {
-
       JSONArray listdonneesjson = new JSONArray();
       String type = req.getParameter("type").toString();
       if (type.equals("experiences")) {
@@ -62,6 +61,11 @@ public class donneesservlet extends HttpServlet {
         List<description> objects = datastore.getdescriptions();
         for(description object:objects)
           listdonneesjson.add(object.toJson());
+      }else if(type.equals("infos"))
+      {
+        List<info> objects = datastore.getinfos();
+        for(info object:objects)
+          listdonneesjson.add(object.toJson());
       }
 
       resp.setContentType("application/json;charset=UTF-8");
@@ -69,6 +73,7 @@ public class donneesservlet extends HttpServlet {
         out.println(listdonneesjson);
       }
     } catch (Exception e) {
+      resp.getWriter().println(e);
       e.printStackTrace();
     }
   }
@@ -82,7 +87,7 @@ public class donneesservlet extends HttpServlet {
     boolean admin = false;
     if (userService.getCurrentUser() != null){
       idUser = userService.getCurrentUser().getUserId();
-      admin=(datastore.isadmin(idUser));
+      admin=(userService.isUserAdmin());
     }
 
     boolean result = false;
@@ -95,20 +100,22 @@ public class donneesservlet extends HttpServlet {
           test_contenu = (req.getParameter("date").toString() != "") &&
                   (req.getParameter("description").toString() != "") &&
                   (req.getParameter("lieu").toString() != "");
-        else if (type.equals("centreinteret") || type.equals("competence") || type.equals("description"))
+        else if (type.equals("centreinteret") || type.equals("competence") || type.equals("description") || type.equals("info"))
           test_contenu = (req.getParameter("description").toString() != "");
 
         if (test_contenu) {
           if (type.equals("experience"))
-            result = datastore.addexperience(req.getParameter("date"), req.getParameter("description"), req.getParameter("lieu"));
+            result = datastore.addexperience(req.getParameter("date"), req.getParameter("description"), req.getParameter("lieu"), Integer.parseInt(req.getParameter("number")));
           else if (type.equals("formation"))
-            result = datastore.addformation(req.getParameter("date"), req.getParameter("description"), req.getParameter("lieu"));
+            result = datastore.addformation(req.getParameter("date"), req.getParameter("description"), req.getParameter("lieu"), Integer.parseInt(req.getParameter("number")));
           else if (type.equals("centreinteret"))
-            result = datastore.addcentreinteret(req.getParameter("description"));
+            result = datastore.addcentreinteret(req.getParameter("description"), Integer.parseInt(req.getParameter("number")));
           else if (type.equals("competence"))
-            result = datastore.addcompetence(req.getParameter("description"));
+            result = datastore.addcompetence(req.getParameter("description"), Integer.parseInt(req.getParameter("number")));
           else if (type.equals("description"))
-            result = datastore.adddescription(req.getParameter("description"));
+            result = datastore.adddescription(req.getParameter("description"), Integer.parseInt(req.getParameter("number")));
+          else if (type.equals("info"))
+            result = datastore.addinfo(req.getParameter("description"), Integer.parseInt(req.getParameter("number")));
           else
             resp.getWriter().println("Type invalide -> " + type);
         } else
