@@ -27,7 +27,7 @@
     <title>Sullivan PINEAU</title>
     <meta charset="utf-8" />
     <link href="style.css" rel="stylesheet" />
-    <meta name="description" content="Acueil du site de Sullivan">
+    <meta name="description" content="Accueil du site de Sullivan">
     <meta name="keywords" content="HTML,CSS,JavaScript,Angular,GoogleAppEngine">
     <meta name="author" content="Sullivan PINEAU">
     <link rel="icon" href="favicon.ico">
